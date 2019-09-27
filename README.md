@@ -1,3 +1,16 @@
+# MarlinSidewinder
+
+The official distribution of Marlin for Artillery (evnovo) Sidewinder consists of a zip detached from the original repository.
+
+This repository is a fork of the original, allowing to integrate commits and keep the code updated. All the configurations present in the official publication of Artillery (evnovo) have been implemented.
+
+Moreover, it is also a place for custom modifications of the Sidewinder. Until now:
+- Babystepping enabled
+- EEPROM unlocked
+- Custom GCode to allow RGB Led tuning with only two buttons via MKS-TFT
+
+---------------------------------------------------------------------------------------
+
 # Marlin 3D Printer Firmware
 <img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
 
