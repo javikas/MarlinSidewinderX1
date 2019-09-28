@@ -2,7 +2,7 @@
 
 The official distribution of Marlin for Artillery (evnovo) Sidewinder consists of a zip detached from the original repository.
 
-This is a fork of the original [Marlin repository](https://github.com/MarlinFirmware/Marlin), allowing to integrate commits and keep the code updated. All the configurations present in the official publication of Artillery (evnovo) have been implemented.
+This is a fork of the original [Marlin repository](https://github.com/MarlinFirmware/Marlin), allowing to integrate commits and keep the code updated. All the configurations present in the official release of Artillery (evnovo) have been implemented.
 
 Moreover, it is also a place for custom modifications of the Sidewinder. Until now:
 - Babystepping enabled
