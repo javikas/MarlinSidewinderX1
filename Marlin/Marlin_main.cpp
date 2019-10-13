@@ -12260,48 +12260,6 @@ inline void gcode_M355() {
 #endif // MIXING_EXTRUDER
 
 /**
- * Custom led switch implementation
- */
-#define MAX_LED_COLORS 10
-bool led_active = false;
-uint8_t led_color_idx = 1;
-
-void set_led_color(uint8_t led_color) {
-  switch (led_color) {
-    case 0: enqueue_and_echo_commands_P(PSTR("M42 P5 S0\nM42 P4 S0\nM42 P6 S0"));       break;  //Off
-    case 1: enqueue_and_echo_commands_P(PSTR("M42 P5 S255\nM42 P4 S255\nM42 P6 S255")); break;  //White
-    case 2: enqueue_and_echo_commands_P(PSTR("M42 P5 S255\nM42 P4 S0\nM42 P6 S0"));     break;  //Red
-    case 3: enqueue_and_echo_commands_P(PSTR("M42 P5 S255\nM42 P4 S40\nM42 P6 S0"));    break;  //Orange
-    case 4: enqueue_and_echo_commands_P(PSTR("M42 P5 S255\nM42 P4 S255\nM42 P6 S0"));   break;  //Yellow
-    case 5: enqueue_and_echo_commands_P(PSTR("M42 P5 S0\nM42 P4 S255\nM42 P6 S0"));     break;  //Green
-    case 6: enqueue_and_echo_commands_P(PSTR("M42 P5 S0\nM42 P4 S255\nM42 P6 S255"));   break;  //Cyan
-    case 7: enqueue_and_echo_commands_P(PSTR("M42 P5 S0\nM42 P4 S0\nM42 P6 S255"));     break;  //Blue
-    case 8: enqueue_and_echo_commands_P(PSTR("M42 P5 S125\nM42 P4 S0\nM42 P6 S255"));   break;  //Purlple
-    case 9: enqueue_and_echo_commands_P(PSTR("M42 P5 S255\nM42 P4 S0\nM42 P6 S255"));   break;  //Pink
-  }
-}
-
-/**
- * M950: Custom. Switch LED on/off
- */
-inline void gcode_M950() {
-  if (led_active) set_led_color(0);
-  else set_led_color(led_color_idx);
-
-  led_active = !led_active;
-}
-
-/**
- * M951: Custom. Cycle LED color
- */
-inline void gcode_M951() {
-  if (!led_active) return;
-  led_color_idx++;
-  if (led_color_idx >= MAX_LED_COLORS) led_color_idx = 1;
-  set_led_color(led_color_idx);
-}
-
-/**
  * M999: Restart after being stopped
  *
  * Default behaviour is to flush the serial buffer and request
@@ -13324,9 +13282,6 @@ void process_parsed_command() {
           case 915: gcode_M915(); break;                          // M915: TMC Z axis calibration routine
         #endif
       #endif
-
-      case 950: gcode_M950(); break;                              // M950: Custom. Switch LED on/off
-      case 951: gcode_M951(); break;                              // M951: Custom. Cycle LED color
 
       case 999: gcode_M999(); break;                              // M999: Restart after being Stopped
 
