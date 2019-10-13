@@ -4776,7 +4776,8 @@ void home_all_axes() { gcode_G28(true); }
 
           home_all_axes();
           set_bed_leveling_enabled(true);
-
+          SERIAL_PROTOCOLLNPGM("Saving Mesh.");
+          (void)settings.save();
           #if ENABLED(MESH_G28_REST_ORIGIN)
             current_position[Z_AXIS] = 0;
             set_destination_from_current();
