@@ -7,7 +7,7 @@ This is a fork of the original [Marlin repository](https://github.com/MarlinFirm
 Moreover, it is also a place for custom modifications of the Sidewinder. Until now:
 - Babystepping enabled
 - EEPROM unlocked
-- Custom GCode to allow RGB Led tuning with only two buttons via MKS-TFT
+- BLtouch
 
 ---------------------------------------------------------------------------------------
 
