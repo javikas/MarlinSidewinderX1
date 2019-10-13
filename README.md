@@ -1,4 +1,4 @@
-# MarlinSidewinderX1
+# MarlinSidewinderX1-ABL
 
 The official distribution of Marlin for Artillery (evnovo) Sidewinder consists of a zip detached from the original repository.
 
