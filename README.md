@@ -9,7 +9,7 @@ Moreover, it is also a place for custom modifications of the Sidewinder. Until n
 - EEPROM unlocked
 - Auto Bed Leveling (BL Touch)
 
-##BL Touch mod:
+## BL Touch mod:
 To reuse the ribbon cable, RGB Led connector is used to connect BL Touch.
 Wiring (from back to front): Purlple(GND), Red(VCC), Yellow(CMD), White(Endstop)
 No black wire needed (GND already on Purlple)
