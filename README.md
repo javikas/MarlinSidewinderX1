@@ -7,8 +7,22 @@ This is a fork of the original [Marlin repository](https://github.com/MarlinFirm
 Moreover, it is also a place for custom modifications of the Sidewinder. Until now:
 - Babystepping enabled
 - EEPROM unlocked
-- BLtouch
+- Auto Bed Leveling (BL Touch)
 
+##BL Touch mod:
+To reuse the ribbon cable, RGB Led connector is used to connect BL Touch.
+Wiring (from back to front): Purlple(GND), Red(VCC), Yellow(CMD), White(Endstop)
+No black wire needed (GND already on Purlple)
+
+MKS-GEN L Led wires also need to be swaped, follow [Waggster mod](https://pretendprusa.co.uk/index.php?PHPSESSID=7ab4a4b0249cf4902908b8483acd946f&topic=30.0) instructions.
+
+As stated in Antclabs website:
+"2) if the red LED in BLTOUCH flashes at 80% duty right after the 3D printer is switched on, please release it with S60 or S160.
+It's a message to check Wiring because your 3D printer board is already sending a control signal to BLTouch before BLTouch power is turned on. Don't worry, your 3D printer and BLTouch work perfectly even if the Red LED flashes at 80% duty.
+
+It is common for BLTouch control signals to occur at machine startup or a little later."
+
+This is happening due to the lack of a pull-down resistor between the command pin and ground. It's not crucial and there's no need to do anything for the probe to work, but it's easy to solve the problem by adding a 4K3 ~ 4K7 resistor to the connector between first and third pins (Command pin and Ground).
 ---------------------------------------------------------------------------------------
 
 # Marlin 3D Printer Firmware
