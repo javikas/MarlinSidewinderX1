@@ -379,10 +379,15 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
+  // Mosquito hotend + 24v 50W heater
+  #define DEFAULT_Kp 37.39
+  #define DEFAULT_Ki 4.31
+  #define DEFAULT_Kd 81.17
+
   // Ultimaker
-  #define DEFAULT_Kp 14.58
-  #define DEFAULT_Ki 1.14
-  #define DEFAULT_Kd 46.57
+  //#define DEFAULT_Kp 14.58
+  //#define DEFAULT_Ki 1.14
+  //#define DEFAULT_Kd 46.57
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
